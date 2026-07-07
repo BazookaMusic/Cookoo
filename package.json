@@ -1,0 +1,17 @@
+{
+  "name": "kitchen-timer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mobile-first, installable kitchen timer PWA. No backend — all state lives in the browser.",
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check-syntax.mjs",
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
