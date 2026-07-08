@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kitchen Timer">
+  <rect width="512" height="512" rx="112" fill="#0e1113"/>
+  <circle cx="256" cy="288" r="150" fill="none" stroke="#ff6b43" stroke-width="28"/>
+  <path d="M256 288 V190" fill="none" stroke="#ff6b43" stroke-width="28" stroke-linecap="round"/>
+  <path d="M256 288 L318 320" fill="none" stroke="#ff6b43" stroke-width="20" stroke-linecap="round"/>
+  <rect x="216" y="70" width="80" height="34" rx="17" fill="#ff6b43"/>
+  <rect x="242" y="96" width="28" height="40" fill="#ff6b43"/>
+</svg>

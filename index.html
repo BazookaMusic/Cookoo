@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <!-- frame-ancestors is intentionally omitted here (ignored in <meta>); it is
+       enforced via HTTP header in netlify.toml / scripts/serve.mjs. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'" />
+  <meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+  <meta name="description" content="A fast, offline, installable kitchen timer. Run several named timers at once, save your favourites, and share them as links." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/app.css" />
+  <title>Kitchen Timer</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-bar">
+    <button type="button" class="app-bar__home" id="home-btn" aria-label="Kitchen Timer — home">
+      <svg class="app-bar__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M12 13V8.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <path d="M9 2h6M12 2v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <span class="app-bar__title">Kitchen&nbsp;Timer</span>
+    </button>
+    <button type="button" class="icon-btn" id="settings-btn" aria-label="Settings" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24">
+        <path fill="currentColor" d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" />
+        <path fill="currentColor" d="M19.4 13a7.8 7.8 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.6 7.6 0 0 0-1.7-1L15 3H9l-.4 2.6a7.6 7.6 0 0 0-1.7 1l-2.3-1-2 3.4L4.6 11a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7.6 7.6 0 0 0 1.7 1L9 21h6l.4-2.6a7.6 7.6 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5Z" opacity=".18" />
+      </svg>
+    </button>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <!-- Views are rendered here by js/ui/*.js -->
+    <section id="view-root" class="view-root"></section>
+  </main>
+
+  <!-- Floating action button (shown on non-empty dashboard) -->
+  <button type="button" class="fab" id="fab" aria-label="New timer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="28" height="28">
+      <path fill="currentColor" d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z" />
+    </svg>
+  </button>
+
+  <!-- Live region for screen-reader countdown / status announcements -->
+  <div id="aria-live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+  <div id="aria-alert" class="visually-hidden" role="status" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- Toast host (undo, hints) -->
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
